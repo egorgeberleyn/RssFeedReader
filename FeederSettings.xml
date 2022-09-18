@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<FeederSettings>
+	<Uri>https://habr.com/rss/interesting</Uri>
+	<UpdateTime>30</UpdateTime>
+	<ProxyAddress></ProxyAddress>
+	<Login></Login>
+	<Password></Password>
+</FeederSettings>

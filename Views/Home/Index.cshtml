@@ -1,0 +1,31 @@
+﻿@model FeedItemsViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="form-check d-flex justify-content-end">
+    <form asp-action="ChangeFormatting" method="post">
+        <input type="checkbox" class="form-check-input" asp-for="IsFormatting">
+        <label class="form-check-label text-formatting" asp-for="IsFormatting">Tag formatting</label>
+        <button class="btn btn-primary w-25" type="submit" value="Change">Ok</button>
+    </form>
+</div>
+<div class="text-center mt-2">
+    <meta http-equiv="refresh" content="@Model.UpdateTime" />
+    <div class="data-container">
+        @foreach (var item in Model.Items)
+        {
+            <div class="feed">
+                <details class="feed-details">
+                    <summary>
+                        <a href="@item.Link" target="_blank" class="feed-link">@item.Title | @item.PublicationDate</a>
+                    </summary>
+                    @if(@Model.IsFormatting)
+                        @Html.Raw(item.Description)
+                    else
+                        @item.Description
+                </details>
+            </div>
+        }
+    </div>
+</div>
